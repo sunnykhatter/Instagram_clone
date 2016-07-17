@@ -21,4 +21,19 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
+    @IBOutlet weak var username_tf: UITextField!
+    @IBOutlet weak var password_tf: UITextField!
+
+
+    @IBAction func signUp(sender: AnyObject) {
+        
+    }
+
+    @IBAction func logIn(sender: AnyObject) {
+    
+    }
+    
+
+
 }
