@@ -29,7 +29,7 @@ class ViewController: UIViewController {
 
     func displayAlert(title:String, message:String) {
         
-        var alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
         alert.addAction((UIAlertAction(title: "OK", style: .Default, handler: { (action) in
         self.dismissViewControllerAnimated(true, completion: nil) })))
         self.presentViewController(alert, animated: true, completion: nil)
@@ -51,7 +51,7 @@ class ViewController: UIViewController {
             activityIndicator.startAnimating()
             UIApplication.sharedApplication().beginIgnoringInteractionEvents()
             
-            var user = PFUser()
+            let user = PFUser()
             user.username = username_tf.text
             user.password = password_tf.text
             
@@ -87,7 +87,19 @@ class ViewController: UIViewController {
         
         
     @IBAction func logIn(sender: AnyObject) {
+        PFUser.logInWithUsernameInBackground(username_tf.text!, password: password_tf.text!) { (user, error) in
+            if user != nil {
+                print("logged in")
+            } else {
+                
+                if let errorString = error!.userInfo["error"] as? String {
+                   let errorMessage = errorString
+                    self.displayAlert("Failed Login", message: errorMessage)
+
+                }
+            }
         
+        }
     }
     
 
