@@ -29,9 +29,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Parse.enableLocalDatastore()
         
         let parseConfiguration = ParseClientConfiguration(block: { (ParseMutableClientConfiguration) -> Void in
-            ParseMutableClientConfiguration.applicationId = "myAppId"
-            ParseMutableClientConfiguration.clientKey = "myMasterKey"
-            ParseMutableClientConfiguration.server = "https://anotherdarntest.herokuapp.com/parse"
+            ParseMutableClientConfiguration.applicationId = "flkajdlfai12309123fa"
+            ParseMutableClientConfiguration.clientKey = "dlfkajo234019jddadf"
+            ParseMutableClientConfiguration.server = "https://instaclone123.herokuapp.com/parse"
         })
         
         Parse.initializeWithConfiguration(parseConfiguration)
